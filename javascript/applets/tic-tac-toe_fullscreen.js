@@ -1,9 +1,9 @@
 void setup() { 
-  size(700, 700); 
+  size(window.innerWidth, window.innerHeight); 
 } 
 
-var width = 700;
-var height = 700;
+var width = window.innerWidth;
+var height = window.innerHeight;
 
 var keys = [];
 void keyPressed() {keys[keyCode]=true;};
@@ -191,6 +191,9 @@ game.setup();
 
 void draw()
 {
+    size(window.innerWidth, window.innerHeight);
+    width = window.innerWidth;
+    height = window.innerHeight;
     background(11, 133, 0);
     var turn = [null, "X", "O"];
     fill(0, 0, 0);

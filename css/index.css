@@ -1,0 +1,45 @@
+#mainContent {
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: xx-large;
+			font-weight: bold;
+			background-color: #ff0000;
+		}
+		header {
+			background-color: #000;
+			height: 100px;
+			text-align:center;
+			padding-top: 10px;
+			font-family: Verdana, sans-serif;
+		}
+		header:hover {
+			background-color: green;
+			
+		}
+		h1 {
+			color: #FFF;
+		}
+		.buttonStyle {
+			border-radius: 4px;
+			background-color: #F8F094;
+			font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+			font-weight: bold;
+			color: #663300;
+			width: 75px;
+		}
+		
+		.buttonStyle:hover {
+			border: thin solid #FFCC00;
+			background-color: #FCF9D6;
+			color: #996633;
+			cursor: pointer;
+		}
+		.buttonStyle:active {
+			border: thin solid #99CC00;
+			background-color: #F5FFD2;
+			color: #669900;
+			cursor: pointer;
+		}
+		#link_sidebar {
+			background-color: lightgray;
+			height: 100%;
+		}
