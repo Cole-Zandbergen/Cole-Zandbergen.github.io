@@ -49,7 +49,7 @@ var Cell = function(x, y)
     this.x = x;
     this.y = y;
     this.h = height*7/40;
-    this.w = width*7/40;
+    this.w = this.h;
     this.type = 0;
     this.flipped = false;
     
@@ -192,8 +192,28 @@ game.setup();
 void draw()
 {
     size(window.innerWidth, window.innerHeight);
-    width = window.innerWidth;
-    height = window.innerHeight;
+    if(window.innerWidth >= 320){width = window.innerWidth;}
+    else{width = 320;}
+    if(window.innerHeight >= 150){height = window.innerHeight;}
+    else{height = 150;}
+    for(var i = 0, length = game.cells.length; i < length; i++)
+    {
+        if(width >= height && width > 320)
+        {
+            game.cells[i].w = height*(7/40);
+        }
+        else if(width < height && width > 320)
+        {
+            game.cells[i].w = width*(7/40);
+        }
+        else
+        {
+            game.cells[i].w = 56;
+        }
+        game.cells[i].h = game.cells[i].w;
+        game.cells[i].x = width/20+game.cells[i].w*(i%3);
+        game.cells[i].y = height/20+game.cells[i].h*(floor(i/3));
+    }
     background(11, 133, 0);
     var turn = [null, "X", "O"];
     fill(0, 0, 0);

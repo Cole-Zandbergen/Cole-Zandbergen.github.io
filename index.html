@@ -27,7 +27,7 @@
 		  <!-- Link Side Bar -->
 		  <div class="col-xs-4" id = "link_sidebar">
 		  	<ul>
-		  		<li><a href="pages/tic-tac-toe.html" target="_blank" style="text-align:center;">tic tac toe</a></li>
+		  		<li><a href="pages/tic-tac-toe_fullscreen.html" target="_blank" style="text-align:center;">tic tac toe</a></li>
 		  	</ul>
 		  </div>
 		</div>
@@ -37,21 +37,37 @@
 <script> 
 var myButton = document.getElementById("clickButton");
 var myText = document.getElementById("helloText");
+var nonhoverText = "cole's page"
+var hoverText = "Return Home?"
 
-$("h1").hover(
-	function(e){
-		console.log("Test");
-		$("h1").text("Hovering!");},
-	function(e){$("h1").text("cole's page")}
-)
+
+$("h1").hover
+	(
+		function()
+		{
+			$("h1").fadeOut(300, function()
+				{
+					$("h1").text(hoverText);
+					$("h1").fadeIn(300);
+				});
+		},
+		function()
+		{
+			$("h1").fadeOut(300, function()
+				{
+					$("h1").text(nonhoverText);
+					$("h1").fadeIn(300);
+				});
+		}
+	);
 
 $("h1").click(
 	function(e){
 		window.location.href("/");
 	}	
-)
+);
 
-myButton.addEventListener('click', doSomething, true)
+myButton.addEventListener('click', doSomething, true);
 
 function doSomething() {
 	myText.textContent = "hello, world!";
